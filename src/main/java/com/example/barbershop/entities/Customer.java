@@ -1,12 +1,22 @@
-package com.example.barbershop.model;
+package com.example.barbershop.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.util.Date;
 
+@Entity
 public class Customer {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
     private String firstName;
     private String lastName;
     private String phoneNumber;
+    private String gender;
     private Date joinDate;
 
     public Customer() {
@@ -19,11 +29,11 @@ public class Customer {
         this.joinDate = joinDate;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -49,6 +59,14 @@ public class Customer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public Date getJoinDate() {
