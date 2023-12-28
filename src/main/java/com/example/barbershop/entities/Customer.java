@@ -22,11 +22,11 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String phoneNumber, Date joinDate) {
+    public Customer(String firstName, String lastName, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.joinDate = joinDate;
+        this.joinDate = new Date();
     }
 
     public long getId() {
