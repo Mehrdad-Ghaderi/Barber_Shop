@@ -27,7 +27,7 @@ public class HomeController {
 
         List<Customer> customerList = customerRepository.findAll();
         model.addAttribute("customerList", customerList);
-        return "home";
+        return "main/home";
     }
 
 }

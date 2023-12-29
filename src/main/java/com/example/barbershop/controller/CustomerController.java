@@ -20,7 +20,7 @@ public class CustomerController {
     public String displayCustomerSignupForm(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
-        return "new-customer";
+        return "customers/new-customer";
     }
 
     @PostMapping("/save")

@@ -19,7 +19,7 @@ public class BarberController {
     @GetMapping("/sign-up")
     public String displayBarberSignupForm(Model model) {
         model.addAttribute("barber", new Barber());
-        return "new-barber";
+        return "barbers/new-barber";
     }
 
     @PostMapping("/save")
