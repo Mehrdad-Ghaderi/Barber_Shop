@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div>
+    <h4>Current Barbers</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Barber's Name</th>
+            <th>Barber's phone number</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="aBarber : ${barberList}">
+            <td th:text="${aBarber.firstName}">
+            <td th:text="${aBarber.lastName}">
+            <td th:text="${aBarber.phoneNumber}">
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Customer's First name</th>
+            <th>Customer's Last name</th>
+            <th>Customer's phone number</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="customer : ${customerList}">
+            <td th:text="${customer.firstName}">
+            <td th:text="${customer.lastName}">
+            <td th:text="${customer.phoneNumber}">
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

@@ -3,8 +3,6 @@ package com.example.barbershop.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Date;
 
 @Entity
 public class Customer {
