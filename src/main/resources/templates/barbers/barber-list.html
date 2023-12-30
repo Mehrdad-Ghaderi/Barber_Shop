@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layouts :: header">
+    <meta charset="UTF-8">
+    <title>Barber List</title>
+</head>
+<body>
+<nav th:replace="layouts::navbar"></nav>
+<div class="container">
+    <h4>Current Barbers Directory</h4>
+
+    <!-- add new barber barber sign up button-->
+    <a th:href="@{/barbers/sign-up}" class="btn btn-primary btn-sm mb-3">Sign up as a barber</a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Barber's First Name</th>
+            <th>Barber's Last Name</th>
+            <th>Barber's phone number</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="barber : ${barbers}">
+            <td th:text="${barber.firstName}">
+            <td th:text="${barber.lastName}">
+            <td th:text="${barber.phoneNumber}">
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

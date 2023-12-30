@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/barbers")
 public class BarberController {
@@ -27,5 +29,12 @@ public class BarberController {
         barberRepository.save(barber);
 
         return "redirect:/barbers/sign-up";
+    }
+
+    @GetMapping("/list")
+    public String displayBarberList(Model model) {
+        var barbers = barberRepository.findAll();
+        model.addAttribute("barbers", barbers);
+        return "barbers/barber-list";
     }
 }

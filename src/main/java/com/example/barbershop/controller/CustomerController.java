@@ -9,12 +9,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/customers")
 public class CustomerController {
 
     @Autowired
     CustomerRepository customerRepository;
+
+   // @GetMapping  // @GM with no argument will invoke the classes argument in this case "/customers"
+
+    @GetMapping("/list")
+    public String displayCustomersList(Model model) {
+        var customers = customerRepository.findAll();
+        model.addAttribute("customers", customers);
+        return "customers/customer-list";
+    }
 
     @GetMapping("/sign-up")
     public String displayCustomerSignupForm(Model model) {
