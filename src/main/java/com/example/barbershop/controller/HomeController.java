@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@Controller
+@Controller("/home")
 public class HomeController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class HomeController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String displayHome(Model model) {
         List<Barber> barberList = barberRepository.findAll();
         model.addAttribute("barberList", barberList);
