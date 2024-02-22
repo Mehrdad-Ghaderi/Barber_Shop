@@ -27,7 +27,6 @@ public class BarberController {
     public String createBarber(Barber barber, Model model) {
         //barber.setId(barber.getId());
         barberRepository.save(barber);
-
         return "redirect:/barbers/list";
     }
 
