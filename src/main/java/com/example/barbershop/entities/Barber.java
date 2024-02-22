@@ -2,9 +2,6 @@ package com.example.barbershop.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-
-//import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
 
@@ -15,7 +12,6 @@ public class Barber {
     @Id
     @NotBlank
     @Column(name = "id")
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @Column(name = "first_name")
     private String firstName;

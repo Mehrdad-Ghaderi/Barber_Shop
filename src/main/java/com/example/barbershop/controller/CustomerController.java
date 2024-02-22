@@ -36,10 +36,9 @@ public class CustomerController {
 
     @PostMapping("/save")
     public String createCustomer(Customer customer, Model model) {
-        //this handles saving the object into the database h2
         customerRepository.save(customer);
 
         //use redirect to prevent duplicate submissions
-        return "redirect:/customers/sign-up";
+        return "redirect:/customers/list";
     }
 }

@@ -11,7 +11,6 @@ public class Customer {
     @Id
     @NotBlank
     @Column(name = "id")
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name = "first_name")
@@ -24,6 +23,9 @@ public class Customer {
     private String phoneNumber;
     @Column(name = "gender")
     private String gender;
+
+    @Column(name = "address")
+    private String address;
     @Basic
     @Column(name = "join_date")
     @Temporal(TemporalType.DATE)
@@ -32,11 +34,12 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String id, String firstName, String lastName, String phoneNumber) {
+    public Customer(String id, String firstName, String lastName, String phoneNumber, String address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        this.address = address;
         this.joinDate = LocalDate.now();
     }
 
@@ -78,6 +81,14 @@ public class Customer {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public LocalDate getJoinDate() {

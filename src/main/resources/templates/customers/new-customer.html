@@ -17,6 +17,9 @@
     <form action="/customers/save" th:object="${customer}" method="post">
         <fieldset data-role="controlgroup">
             <legend>Enter your information:</legend>
+            <label for="id">ID Number:</label>
+            <input type="text" id="id" placeholder="00123456789" th:field="${customer.id}">
+            <br>
             <label for="firstName">First name:</label>
             <input type="text" id="firstName" placeholder="First name" th:field="${customer.firstName}">
             <br>
@@ -36,6 +39,13 @@
             <input type="radio" name="gender" id="male" value="Male" th:field="${customer.gender}">
             <label for="female">Female</label>
             <input type="radio" name="gender" id="female" value="female" th:field="${customer.gender}">
+        </fieldset>
+
+        <fieldset>
+            <legend>Address:</legend>
+            <label for="address"></label>
+            <textarea id="address" placeholder="no, Street, City" th:field="${customer.address}"></textarea>
+            <br>
         </fieldset>
 
         <br>
