@@ -1,31 +1,45 @@
 package com.example.barbershop.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+//import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "barber")
 public class Barber {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @NotBlank
+    @Column(name = "id")
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "phone_number")
     private String phoneNumber;
+    @Column(name = "gender")
     private String gender;
+    @Column(name = "email")
     private String email;
+    @Column(name = "address")
     private String address;
-    private double rank;
 
+    @Column(name = "join_date")
     @Temporal(TemporalType.DATE)
     private LocalDate joinDate;
 
     public Barber() {
     }
 
-    public Barber(String firstName, String lastName, String phoneNumber, String gender,
+    public Barber(String id, String firstName, String lastName, String phoneNumber, String gender,
                   String email, String address) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -35,11 +49,11 @@ public class Barber {
         this.joinDate = LocalDate.now();
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -89,16 +103,6 @@ public class Barber {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public double getRank() {
-        return rank;
-    }
-
-    public void setRank(double rank) {
-        if (0 < rank && rank < 11) {
-            this.rank = rank;
-        }
     }
 
     public LocalDate getJoinDate() {

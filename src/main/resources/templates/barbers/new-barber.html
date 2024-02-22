@@ -12,10 +12,13 @@
     <h1>Sign Up</h1>
 </div>
 
-<div data-role="main">
+<div data-role="main" style="margin-left: 50px;">
     <form action="/barbers/save" th:object="${barber}" method="post">
         <fieldset data-role="controlgroup">
             <legend>Enter your information:</legend>
+            <label for="id">ID Number:</label>
+            <input type="text" id="id" placeholder="0012345678" th:field="${barber.id}">
+            <br>
             <label for="firstName">First name:</label>
             <input type="text" id="firstName" placeholder="First name" th:field="${barber.firstName}">
             <br>
